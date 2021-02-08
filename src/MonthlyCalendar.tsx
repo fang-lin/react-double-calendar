@@ -42,7 +42,7 @@ const MonthlyCalendar: FunctionComponent<MonthlyCalendarProps> = ({
         if (day.getMonth() === firstPositionDate.getMonth() || day.getMonth() === month) {
             days.push(day);
             if (i < 7) {
-                dates.push(day.toLocaleString('default', {weekday: "short"}))
+                dates.push(day.toLocaleString(navigator.language, {weekday: "short"}))
             }
             i++;
         } else {
@@ -52,8 +52,8 @@ const MonthlyCalendar: FunctionComponent<MonthlyCalendarProps> = ({
 
     return <MonthlyCalendarWrapper>
         <MonthlyCalendarHeader>
-            <span>{monthDate.toLocaleString('default', {month: "long"})}</span>
-            <span>{monthDate.toLocaleString('default', {year: "numeric"})}</span>
+            <span>{monthDate.toLocaleString(navigator.language, {month: "long"})}</span>
+            <span>{monthDate.toLocaleString(navigator.language, {year: "numeric"})}</span>
         </MonthlyCalendarHeader>
         <MonthlyCalendarTitle {...{cellWidth}}>
             {
